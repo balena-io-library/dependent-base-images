@@ -1,0 +1,15 @@
+{
+  "name": "microbit",
+  "version": "0.0.1",
+  "description": "micro:bit firmware building base image",
+  "author": "Joseph Roberts <joe@resin.io>",
+  "homepage": "https://github.com/resin-io-library/dependent-base-images",
+  "repository": {
+    "url": "git@github.com:resin-io-library/dependent-base-images.git",
+    "type": "git"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  }
+}
