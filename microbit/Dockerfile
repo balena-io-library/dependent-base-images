@@ -30,6 +30,9 @@ RUN mkdir -p /temp && cd /temp && \
 	pip install yotta && \
 	cd / && rm -rf /temp
 
+# Set the working directory
+WORKDIR /usr/src/app
+
 # Copy module.json to the working directory
 COPY module.json ./
 
