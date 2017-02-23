@@ -7,17 +7,11 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 	ca-certificates \
 	make \
 	curl \
-	# gcc \
 	gcc-arm-none-eabi \
 	git \
-	# libffi-dev \
-	# libssl-dev \
 	libnewlib-arm-none-eabi \
-	# libstdc++-arm-none-eabi-newlib \
-	# ninja-build \
 	python-dev \
 	python-setuptools \
-	# srecord \
 	unzip && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
@@ -35,6 +29,9 @@ RUN mkdir -p /opt && cd /opt && \
 	cd pc-nrfutil && git checkout 0_5_2 && \
 	pip install -r requirements.txt && python setup.py install && \
 	cd / && rm -rf /temp
+
+# Set the working directory
+WORKDIR /usr/src/app
 
 # Set up for building
 RUN mkdir -p /assets
