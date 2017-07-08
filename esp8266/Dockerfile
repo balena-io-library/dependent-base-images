@@ -4,12 +4,13 @@ FROM bitnami/minideb
 # Install dependencies
 RUN apt-get update && apt-get install -yq --no-install-recommends \
     python \
-    python-pip && \
+    python-pip \
+    python-setuptools && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
 # Install tools
-RUN pip install platformio
+RUN pip install -U platformio
 
 # Set the working directory
 WORKDIR /usr/src/app
